@@ -1,0 +1,179 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jack Bosco</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="canonical" href="/">
+    <link rel="stylesheet" id="open-sans-css" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;ver=4.2.4" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:600italic,600,400,400italic" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="site-title" href="/">Jack Bosco</a>
+        <nav class="site-nav">
+          <div class="trigger"><h1>Main Navigation</h1>
+            <ul class="menu">
+              <li><a href="./index.html">Bio</a></li>
+              <li><a href="./media.html">Media</a></li>
+              <li><a href="./images/resume.pdf" target="_blank">Resume</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+            </ul>
+          </div>  
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="wrapper" :after="">
+        
+
+<div class="post-content">
+  <header class="post-header">
+    <h1 class="post-title">Projects</h1>
+  </header>
+  
+  <div class="project">
+    <div class="title-row" href="https://www.gymlibrary.dev/environments/classic_control/cart_pole/">
+      <h2>CartPole</h2>
+      <p>Utilizing reinforcement learning, I trained an AI to survive the OpenAIGym CartPole environment for 500 steps.
+        The training method was a standard <i>Q</i>-learning algorithm with an expected value matrix (2D NumPy array) data structure.
+      </p>
+    </div>
+    <div class="graphics-row">
+      <div class="display">
+        <img src="./images/cartpole.gif">
+      </div>
+      <div class="chart">
+        <img src="./images/cartpoletrainingchart.png">
+      </div>
+    </div>
+    <div class="text-row">
+      <p>
+        The CartPole environment's state space is continuous, so storing every possible state in an array is not feasible. 
+        Thus, for Q-learning to work the buckets hyperparameter is necessary as it discretizes the state space. 
+        <i>But</i> - you might object - <i>multi-layered perceptions are capable of handling a continuous state space with no extra hyperparameters.</i>
+        True, yet SARSA algorithms typically require several more hyperparameters than Q-learning.
+        Therefore by discretizing we may learn CartPole with less external input.
+      </p>
+      <ul>
+        Hyperparameters:
+        <li>buckets (discretizes state space to) : <i>4-tuple</i>=(3, 3, 6, 6)</li>
+        <li>neps (number of training episodes)<i>int</i>=1000</li>
+        <li>alpha : <i>float</i>=0.1</li>
+        <li>gamma (learning coefficient) <i>float</i>=1.0 --this means it does nothing</li>
+        <li>epsilon=0.1, decay=25 (dynamic epsilon values with 25 as annealing coefficient and 0.1 as ultimate value)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="project">
+    <div class="title-row" href="http://pornhub.com">
+      <h2>Pendulum</h2>
+      <p>
+        Utilizing reinforcement learning, I trained an AI to work in the OpenAIGym Pendulum environment.
+        The idea is to swing the pendulum straight upwards: against gravity.
+        I trained it using a SARSA algorithm with the PyTorch neural network data structure.
+      </p>
+    </div>
+    <div class="graphics-row">
+      <div class="display">
+        <img src="./images/pendulum.gif">
+      </div>
+      <div class="chart">
+        <img src="./images/pendulumtrainingchart.png">
+      </div>
+    </div>
+    <div class="text-row">
+      <p>
+        As oppesed to the CartPole environment, Pendulum is motivated by mitigating penalty.
+        Pendulum's environment has both a continuous action space and state space. 
+        While SARSA training can handle a continuous state space, I still had to discretize the action space.
+        This is where the n-actions hyperparameter comes in.
+        Admitedly, an actor-critic model with continuous probability distributions would yeild less hyperparameters.
+      </p>
+      <ul>
+        Hyperparameters:
+        <li>
+          gamma (Discount rate for Q_target): <i>float</i>=0.95
+        </li>
+        <li>
+          neps (Number of epsidoes to run): <i>int</i>=300
+        </li>
+        <li>
+          batch-size (Mini-batch size): <i>int</i>=16
+        </li>
+        <li>
+          hidden-dim (Hidden dimension): <i>int</i>=90
+        </li>
+        <li>
+          capacity (Replay memory capacity): <i>int</i>=50000 --this didn't end up mattering
+        </li>
+        <li>
+          max-episode (e-Greedy target episode where epsilon=min-eps): <i>int</i>=200
+        </li>
+        <li>
+          min-eps (Min epsilon): <i>float</i>=0.00175
+        </li>
+        <li>
+          n-actions (Discrete number of actions): <i>int</i>=4
+        </li>
+      </ul>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+    <footer class="site-footer">
+      <div class="wrapper">
+        <div class="footer-col-wrapper">
+          <div class="footer-col  footer-col-2">
+            <ul class="social-media-list" style="margin-left: 50px;">
+              <li>
+                <a href="https://github.com/jackbosco">
+                  <span class="icon  icon--github">
+                    <svg viewBox="0 0 16 16">
+                      <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+                    </svg>
+                  </span>
+                  <span class="username">Github</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/jack-bosco-67aa36237">
+                  <span class="icon  icon--instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="" viewBox="-2 0 26 26"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                  </span>
+                  <span class="username"> LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/17294259/jack-bosco">
+                  <span class="icon icon--stackoverflow">
+                    <svg viewBox="-2 14 32 32" style="height:20px;">
+                      <g fill="none">
+                      <path xmlns="http://www.w3.org/2000/svg" fill="#BCBBBB" d="M26 41v-9h4v13H0V32h4v9"></path>
+                      <path xmlns="http://www.w3.org/2000/svg" fill="#F48024" d="M23.09 33.99l.7-2.95-16.11-3.35L7 31l16.09 2.99zM9.1 23.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 26.4l2.1-2.5-12.7-10.6-2.1 2.5zM21.5 8l-2.7 2 9.9 13.3 2.7-2L21.5 8zM7 38h16v-3H7v3z"></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="username"> StackOverflow</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col  footer-col-3">
+            <p class="text" style="margin-left: 190px;">
+              CSCI Bachelor of the Arts '2024
+              <br>Washington and Lee University
+              <br>Lexington, VA 24450
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- This website is a modified version of the jekyll template developed by Steven Miller, Joel Glovier and Alex King (https://github.com/svmiller/steve-ngvb-jekyll-template). -->
+    </footer>
+  
+</div></body><div id="simplifyJobsContainer" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: visible; z-index: 2147483647;"><span></span></div></html>
