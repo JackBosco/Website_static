@@ -20,7 +20,7 @@
 /* Sub Menu */
 .site-nav .sub-menu a { display: block; font-weight: normal; height: auto; letter-spacing: 0; line-height: 1.2em; padding: 4px 10px; color: #0076A8; }
 
-.site-nav .sub-menu a:hover { color: #003087; }
+.site-nav .sub-menu a:hover { color: #eff1f3; }
 
 .site-nav .sub-menu { background: #ffffff; border-color: #0076A8; min-width: 265px; z-index: 2147483647; }
 
@@ -76,7 +76,7 @@ a { color: #0077CC; text-decoration: none; }
 
 a:visited {color: #004270; text-decoration: none; }
 
-a:hover { color: blue; text-decoration: underline; }
+a:hover { color: #004370f3; text-decoration: underline; }
 
 /* .post-content a, .home a { font-weight: 500; } */
 /** Blockquotes */
@@ -160,7 +160,7 @@ h11 { /*    font-size: 42px; */ letter-spacing: 0px; line-height: 1; font-family
 
 .post-content-media-row{border-bottom: 1px solid rgb(3, 21, 40);padding: 10px; cursor: pointer; display: grid; grid-template-columns: 25% auto}
 
-.post-content-media-row:hover{background-color: #004270;cursor: pointer;}
+.post-content-media-row:hover{background-color: #d8e1e7;cursor: pointer;}
 
 .post-content-media-row > div{height: 100px;}
 
@@ -179,7 +179,9 @@ h11 { /*    font-size: 42px; */ letter-spacing: 0px; line-height: 1; font-family
 
 .post-content .project .graphics-row{display: grid; grid-template-columns: 60% auto}
 
-.post-content .project .title-row:hover{background-color: #c4bbed;}
+.post-content .project > p {text-align: left; font-size: 12px; width: 100%; color: (0, 0, 0); }
+
+/**.post-content .project .title-row:hover{background-color: #c4bbed;} **/
 
 .post-content .project .title-row{width: 100%;}
 
