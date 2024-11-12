@@ -37,20 +37,31 @@
 
   <div class="project">
     <div class="title-row">
-      <h2>Washington and Lee oSTEM Chapter</h2>
+      <h2>Time Feature Jointly Aware Deep Reinforcement Learning (TFJ-DRL) Optimization</h2>
       <p>
-        I started the Washington and Lee oSTEM chapter because I believe the externalities of artificial intelligence and beyond come as a direct result of lack of diversity within the field of AI and STEM.
-        With the W&L oSTEM Network, LGBTQ+ students and allies at Washington and Lee can amplify their voices within the field of AI, thereby addressing this issue through inclusion.
+        An exploritory project improving on the interpretibility of the TFJ-DRL model using XAI techniques to break open the black-box TAM-GRU mechanism.
+        To do this, I attempt to use a an autoencoder to predict anomalies in the hidden state of the TAM-GRU mechanism.
+      </p>
+      
       </p>
     </div>
     <p>
-      With today's breakneck pace of technological innovation, AI and machine learning algorithms have the potential of becoming ubiquitous within the STEM field and beyond. However, this does not guarantee the applications of AI algorithms will only yield positive outcomes. The proliferation of algorithmic cruelty due to poorly implemented AI classifiers, for example, presents a pressing social dilemma. 
-      The initiative of this chapter is to introduce LGBTQ+ students and allies to resources for expanding their career in STEM. W&L’s oSTEM Network will extend oSTEM’s outreach to W&L’s student body, thereby making oSTEM’s resources accessible W&L students. Through oSTEM, our chapter will provide networking channels with oSTEM’s digital chapter registry and membership discord channel.
-      Through oSTEM, our chapter can provide expert and financial support with oSTEM's many resources. 
+        Supervised learning methods are difficult to achieve online learning, due to the cost of training. They attempt to predict stock prices of the next time point, but accuracy of price prediction results in second error propagation during translation from price prediction to trading actions.
+        Reinforcement learning (RL) methods lack the ability to perceive and represent environment features, as well as the ability to dynamically consider past states and changing trends.
+        TFJ-DRL uses both supervised an reinforcement learning to represent the environment and act within environment, respectively.
     </p>
-    <li><a href = https://www.queerinai.com/grad-app-aid>Graduate School Application Aid</a></li>
-    <li><a href = https://ostem.org/page/join-the-ostem-organization>National Network of Chapters</a></li>
+    <img src="./images/confusion_pnl.png">
+    <p>
+      The above is a demonstatration of TFJ-DRL (top) and my addition (below).
+      At a given timestep, the autoencoder generates a loss score from encoding and decoding the hidden state vector.
+      I dub this loss `confusion', and motivate it's use as a metric for how familiar the model is with the current environment.
+      Higher confusion infers less familiarity, so we use confusion to determine when the model is liable to lose money before it does.
+    </p>
+
+    <li><a href = https://doi.org/10.1016/j.eswa.2019.112872>Original Paper</a></li>
+    <li><a href = https://github.com/JackBosco/tfj-drl-refactor>Github Repo (Work In Progress!)</a></li>
   </div>
+
   <div class="project">
     <div class="title-row">
       <h2>Knee Alignment Research</h2>
@@ -76,6 +87,24 @@
       </p>
     </div>
   </div>
+
+  <div class="project">
+    <div class="title-row">
+      <h2>Washington and Lee oSTEM Chapter</h2>
+      <p>
+        I started the Washington and Lee oSTEM chapter because I believe the externalities of artificial intelligence and beyond come as a direct result of lack of diversity within the field of AI and STEM.
+        With the W&L oSTEM Network, LGBTQ+ students and allies at Washington and Lee can amplify their voices within the field of AI, thereby addressing this issue through inclusion.
+      </p>
+    </div>
+    <p>
+      With today's breakneck pace of technological innovation, AI and machine learning algorithms have the potential of becoming ubiquitous within the STEM field and beyond. However, this does not guarantee the applications of AI algorithms will only yield positive outcomes. The proliferation of algorithmic cruelty due to poorly implemented AI classifiers, for example, presents a pressing social dilemma. 
+      The initiative of this chapter is to introduce LGBTQ+ students and allies to resources for expanding their career in STEM. W&L’s oSTEM Network will extend oSTEM’s outreach to W&L’s student body, thereby making oSTEM’s resources accessible W&L students. Through oSTEM, our chapter will provide networking channels with oSTEM’s digital chapter registry and membership discord channel.
+      Through oSTEM, our chapter can provide expert and financial support with oSTEM's many resources. 
+    </p>
+    <li><a href = https://www.queerinai.com/grad-app-aid>Graduate School Application Aid</a></li>
+    <li><a href = https://ostem.org/page/join-the-ostem-organization>National Network of Chapters</a></li>
+  </div>
+  
   <div class="project">
     <div class="title-row">
       <h2>CartPole</h2>
