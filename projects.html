@@ -41,15 +41,17 @@
       <h2>Time Feature Jointly Aware Deep Reinforcement Learning (TFJ-DRL) Optimization</h2>
       <p>
         An exploritory project improving on the interpretibility of the TFJ-DRL model using XAI techniques to break open the black-box TAM-GRU mechanism.
-        To do this, I attempt to use a an autoencoder to predict anomalies in the hidden state of the TAM-GRU mechanism.
+        To do this, I attempt to use an autoencoder to predict anomalies in the hidden state of the TAM-GRU mechanism.
       </p>
       
       </p>
     </div>
     <p>
-        Supervised learning methods are difficult to achieve online learning, due to the cost of training. They attempt to predict stock prices of the next time point, but accuracy of price prediction results in second error propagation during translation from price prediction to trading actions.
+        Supervised learning methods attempt to predict the stock price at the next time point and the trading action is inferred from that prediction.
+        The issue with supervised learning for this application is the accuracy of price prediction results in second error propagation during translation from price prediction to trading actions.
         Reinforcement learning (RL) methods lack the ability to perceive and represent environment features, as well as the ability to dynamically consider past states and changing trends.
-        TFJ-DRL uses both supervised an reinforcement learning to represent the environment and act within environment, respectively.
+        This means RL will struggle to converge with a sufficiently wide context window length and number of features per stock.
+        TFJ-DRL addresses these issues by combining supervised an reinforcement learning mechanisms in series to represent the environment and act within the environment, respectively.
     </p>
     <img src="./images/confusion_pnl.png">
     <p>
@@ -70,6 +72,7 @@
         Orthopedic surgeons use many measurements and statistics to plan for robot-assisted total knee arthroplasty. 
         Among these measurements are body mass index (BMI), medial-proximal tibial angle (MPTA) and lateral-distal femoral angle (LDFA).
         I used deep learning to transform these measurements into feature representations, and regressed these features to predict optimal post-surgical knee alignments from pre-operative values.
+        This model helps surgeons plan for robot-assisted TKR and, in a more general sence, further motivates the adoption of hyper-accurate deep learning models to improve patient outcomes.
       </p>
       <li> 
         <a href="./images/9376-Bosco-J.pdf">Short Talk Presentation Slides</a>
@@ -83,7 +86,7 @@
     </div>
     <div class="text-row">
       <p>
-        This chart shows preoperative aHKA (x-axis) and postoperative aHKA (y-axis).
+        The chart above shows preoperative aHKA (x-axis) and postoperative aHKA (y-axis).
         aHKA is the additive difference between the LDFA and MPTA measurements.
       </p>
     </div>
